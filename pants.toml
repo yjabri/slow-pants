@@ -1,0 +1,23 @@
+[GLOBAL]
+pants_version = "2.14.1"
+
+backend_packages = [
+  "pants.backend.python",
+]
+
+[anonymous-telemetry]
+enabled = false
+
+[python]
+interpreter_constraints = ["CPython==3.10.*"]
+
+[pytest]
+args = ["-p no:warnings"]
+export = false
+
+[subprocess-environment]
+env_vars = [
+  'GRPC_PYTHON_BUILD_SYSTEM_OPENSSL=TRUE',
+  'GRPC_PYTHON_BUILD_SYSTEM_ZLIB=1',
+  'GRPC_BUILD_WITH_BORING_SSL_ASM=',
+]
